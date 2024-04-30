@@ -1,0 +1,2 @@
+export const REFETCH_INTERVAL = 60000
+export const NEWS_QUERY_LIMIT = 60000
