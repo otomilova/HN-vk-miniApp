@@ -1,7 +1,7 @@
 import { Button, CardGrid, Group, Header } from '@vkontakte/vkui'
 import { useNews } from '../../hooks/useNews.js'
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router'
-import Loader from '../../ui/Loader.jsx'
+import Loader from '../../ui/loader/Loader.jsx'
 import styles from './index.module.css'
 import { Story } from './Story.jsx'
 

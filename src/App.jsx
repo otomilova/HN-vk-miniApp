@@ -15,23 +15,26 @@ function App() {
 	const { panel: activePanel } = useActiveVkuiLocation()
 	return (
 		<AppRoot>
-			<View activePanel={activePanel}>
-				<Panel id='main'>
-					<PanelHeader
-						before={<Image src='/logo.svg' alt='Hacker News Logo' />}
-					>
-						Hacker News
-					</PanelHeader>
-					<NewsList />
-					<Footer>Hacker News</Footer>
-				</Panel>
-				<Panel id='newsOverview'>
-					<PanelHeader
-						before={<Image src='/logo.svg' alt='Hacker News Logo' />}
-					>
-						Hacker News
-					</PanelHeader>
-					<NewsOverview />
+			<View activePanel='outer'>
+				<Panel id='outer'>
+					<View activePanel={activePanel}>
+						<Panel id='main'>
+							<PanelHeader
+								before={<Image src='/logo.svg' alt='Hacker News Logo' />}
+							>
+								Hacker News
+							</PanelHeader>
+							<NewsList />
+						</Panel>
+						<Panel id='newsOverview'>
+							<PanelHeader
+								before={<Image src='/logo.svg' alt='Hacker News Logo' />}
+							>
+								Hacker News
+							</PanelHeader>
+							<NewsOverview />
+						</Panel>
+					</View>
 					<Footer>Hacker News</Footer>
 				</Panel>
 			</View>

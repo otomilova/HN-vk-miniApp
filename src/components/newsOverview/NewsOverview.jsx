@@ -15,7 +15,7 @@ import {
 } from '@vkontakte/vkui'
 import { useParams, useRouteNavigator } from '@vkontakte/vk-mini-apps-router'
 import { useNewsById } from '../../hooks/useNewsById.js'
-import Loader from '../../ui/Loader.jsx'
+import Loader from '../../ui/loader/Loader.jsx'
 import { Icon24ExternalLinkOutline } from '@vkontakte/icons'
 import Comments from '../comments/Comments.jsx'
 import parse from 'html-react-parser'
@@ -34,7 +34,12 @@ const NewsOverview = () => {
 	} = useNewsById(id, true)
 	return (
 		<Group>
-			{isLoading && <Loader />}
+			{isLoading && (
+				<>
+					<PanelHeaderBack onClick={() => routeNavigator.back()} />
+					<Loader />
+				</>
+			)}
 			{isSuccess && (
 				<>
 					<PanelHeaderBack onClick={() => routeNavigator.back()} />
@@ -59,7 +64,7 @@ const NewsOverview = () => {
 								</Link>
 							)}
 						</div>
-						<Caption level='2' style={{ marginBottom: 16, marginTop: 16 }}>
+						<Caption level='2' className={styles.published}>
 							{`Published ${currentNews.time} ago by ${currentNews.by}`}
 						</Caption>
 						<Spacing size={24} />

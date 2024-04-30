@@ -1,6 +1,6 @@
 import { useComments } from '../../hooks/useComments.js'
 import React, { useState } from 'react'
-import Loader from '../../ui/Loader.jsx'
+import Loader from '../../ui/loader/Loader.jsx'
 import { Button, RichCell, Separator, Spacing, Text } from '@vkontakte/vkui'
 import parse from 'html-react-parser'
 import styles from './index.module.css'
