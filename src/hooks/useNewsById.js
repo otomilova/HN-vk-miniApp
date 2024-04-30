@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { formatDistance } from 'date-fns'
 import { getItemById } from '../services/items.service.js'
 
-export const useNewsById = id => {
+export const useNewsById = (id, refetchOnMount = false) => {
 	return useQuery({
 		enabled: !!id,
 		queryKey: ['get news overview', id],
@@ -13,6 +13,7 @@ export const useNewsById = id => {
 				...data,
 				time: formatDistance(itemDate, new Date(), { includeSeconds: true })
 			}
-		}
+		},
+		refetchOnMount: refetchOnMount
 	})
 }

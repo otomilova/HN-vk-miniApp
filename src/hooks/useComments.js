@@ -9,7 +9,8 @@ export const useComments = ids => {
 			? ids?.map(id => {
 					return {
 						queryKey: ['comment details', id],
-						queryFn: () => getItemById(id)
+						queryFn: () => getItemById(id),
+						refetchOnMount: true
 					}
 				})
 			: [],
