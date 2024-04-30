@@ -1,12 +1,10 @@
-import { $axios } from './api.js'
+import axios from 'axios'
+import { HN_URL } from './apiConstants.js'
 
 export const getNews = async limit => {
 	try {
-		return $axios.get(
-			`/newstories.json?print=pretty&orderBy="$key"&limitToFirst=${limit}`,
-			{
-				headers: { 'Access-Control-Allow-Origin': 'localhost:3000' }
-			}
+		return axios.get(
+			`${HN_URL}/newstories.json?print=pretty&orderBy="$key"&limitToFirst=${limit}`
 		)
 	} catch (err) {
 		console.error(err.toJSON())

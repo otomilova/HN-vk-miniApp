@@ -1,10 +1,9 @@
-import { $axios } from './api.js'
+import { HN_URL } from './apiConstants.js'
+import axios from 'axios'
 
 export const getItemById = async id => {
 	try {
-		return $axios.get(`/item/${id}.json?print=pretty`, {
-			headers: { 'Access-Control-Allow-Origin': 'localhost:3000' }
-		})
+		return axios.get(`${HN_URL}/item/${id}.json?print=pretty`)
 	} catch (err) {
 		console.error(err.toJSON())
 	}
