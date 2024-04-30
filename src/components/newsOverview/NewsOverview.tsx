@@ -14,23 +14,31 @@ import {
 	Title
 } from '@vkontakte/vkui'
 import { useParams, useRouteNavigator } from '@vkontakte/vk-mini-apps-router'
-import { useNewsById } from '../../hooks/useNewsById.js'
-import Loader from '../../ui/loader/Loader.jsx'
+import { useNewsById } from '../../hooks/useNewsById'
+import Loader from '../../ui/loader/Loader.tsx'
 import { Icon24ExternalLinkOutline } from '@vkontakte/icons'
-import Comments from '../comments/Comments.jsx'
+import Comments from '../comments/Comments'
 import parse from 'html-react-parser'
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './index.module.css'
+import { IStory } from '../../types/types'
+import { UseQueryResult } from '@tanstack/react-query/build/modern/index'
 
-const NewsOverview = () => {
+const NewsOverview: FC = () => {
 	const routeNavigator = useRouteNavigator()
-	const { id } = useParams()
+	const { id } = useParams<'id'>()
 	const {
 		data: currentNews,
 		isLoading,
 		isSuccess,
 		refetch,
 		isFetching
+	}: {
+		data: IStory
+		isLoading: boolean
+		isSuccess: boolean
+		refetch: () => Promise<UseQueryResult>
+		isFetching: boolean
 	} = useNewsById(id, true)
 	return (
 		<Group>

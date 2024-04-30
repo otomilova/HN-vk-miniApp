@@ -1,11 +1,13 @@
 import { Button, CardGrid, Group, Header } from '@vkontakte/vkui'
-import { useNews } from '../../hooks/useNews.js'
+import { useNews } from '../../hooks/useNews'
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router'
-import Loader from '../../ui/loader/Loader.jsx'
+import Loader from '../../ui/loader/Loader.tsx'
 import styles from './index.module.css'
-import { Story } from './Story.jsx'
+import { Story } from './Story'
+import { FC } from 'react'
+import { UseQueryResult } from '@tanstack/react-query'
 
-const NewsList = () => {
+const NewsList: FC = () => {
 	const {
 		data: news,
 		refetch,
@@ -13,6 +15,13 @@ const NewsList = () => {
 		isPending,
 		isRefetching,
 		isFetching
+	}: {
+		data: number[]
+		refetch: () => Promise<UseQueryResult>
+		isLoading: boolean
+		isPending: boolean
+		isRefetching: boolean
+		isFetching: boolean
 	} = useNews()
 	const routeNavigator = useRouteNavigator()
 	return (

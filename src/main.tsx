@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './App'
 import bridge from '@vkontakte/vk-bridge'
 import { AdaptivityProvider, ConfigProvider } from '@vkontakte/vkui'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -43,7 +43,7 @@ const routes = [
 
 const hashRouter = createHashRouter(routes)
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
 	<ConfigProvider>
 		<AdaptivityProvider>
 			<QueryClientProvider client={queryClient}>

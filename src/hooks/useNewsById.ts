@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import { formatDistance } from 'date-fns'
-import { getItemById } from '../services/items.service.js'
+import { getItemById } from '../services/items.service.ts'
 
-export const useNewsById = (id, refetchOnMount = false) => {
+export const useNewsById = (id: number, refetchOnMount: boolean = false) => {
 	return useQuery({
 		enabled: !!id,
 		queryKey: ['get news overview', id],

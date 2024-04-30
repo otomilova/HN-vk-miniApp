@@ -1,8 +1,16 @@
-import { useNewsById } from '../../hooks/useNewsById.js'
+import { useNewsById } from '../../hooks/useNewsById'
 import { ContentCard, SimpleCell, Spinner } from '@vkontakte/vkui'
 import styles from './index.module.css'
+import { RouteNavigator } from '@vkontakte/vk-mini-apps-router'
+import { FC } from 'react'
+import { IStory } from '../../types/types'
 
-export const Story = ({ id, routeNavigator }) => {
+interface IStoryProps {
+	id: number
+	routeNavigator: RouteNavigator
+}
+
+export const Story: FC<IStoryProps> = ({ id, routeNavigator }) => {
 	const {
 		data: story,
 		isLoading,
@@ -10,6 +18,13 @@ export const Story = ({ id, routeNavigator }) => {
 		isRefetching,
 		isFetching,
 		isSuccess
+	}: {
+		data: IStory
+		isLoading: boolean
+		isPending: boolean
+		isRefetching: boolean
+		isFetching: boolean
+		isSuccess: boolean
 	} = useNewsById(id)
 	return (
 		<>

@@ -27,4 +27,5 @@ yarn.lock
 build.zip
 .prettierrc
 .eslintrc.cjs
+package-lock.json
 
