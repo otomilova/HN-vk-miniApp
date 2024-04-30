@@ -1,8 +1,9 @@
-import { useComments } from '../hooks/useComments.js'
+import { useComments } from '../../hooks/useComments.js'
 import React, { useState } from 'react'
-import Loader from '../ui/Loader.jsx'
+import Loader from '../../ui/Loader.jsx'
 import { Button, RichCell, Separator, Spacing, Text } from '@vkontakte/vkui'
 import parse from 'html-react-parser'
+import styles from './index.module.css'
 
 const Comments = ({ ids, shift }) => {
 	const {
@@ -31,7 +32,7 @@ const Comments = ({ ids, shift }) => {
 										style={{ marginLeft: `${shift * 75}px` }}
 										caption={comment.time}
 										bottom={
-											<Text style={{ textWrap: 'wrap', maxWidth: '90vw' }}>
+											<Text className={styles.wrapText}>
 												{parse(comment.data.text)}
 											</Text>
 										}

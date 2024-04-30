@@ -6,10 +6,10 @@ import {
 	PanelHeader,
 	View
 } from '@vkontakte/vkui'
-import '@vkontakte/vkui/dist/vkui.css'
+import '@vkontakte/vkui/dist/cssm/styles/themes.css'
 import { useActiveVkuiLocation } from '@vkontakte/vk-mini-apps-router'
-import NewsOverview from './components/NewsOverview'
-import NewsList from './components/NewsList.jsx'
+import NewsOverview from './components/newsOverview/NewsOverview.jsx'
+import NewsList from './components/newsList/NewsList.jsx'
 
 function App() {
 	const { panel: activePanel } = useActiveVkuiLocation()

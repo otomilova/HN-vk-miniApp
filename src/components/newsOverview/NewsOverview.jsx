@@ -14,12 +14,13 @@ import {
 	Title
 } from '@vkontakte/vkui'
 import { useParams, useRouteNavigator } from '@vkontakte/vk-mini-apps-router'
-import { useNewsById } from '../hooks/useNewsById.js'
-import Loader from '../ui/Loader.jsx'
+import { useNewsById } from '../../hooks/useNewsById.js'
+import Loader from '../../ui/Loader.jsx'
 import { Icon24ExternalLinkOutline } from '@vkontakte/icons'
-import Comments from './Comments.jsx'
+import Comments from '../comments/Comments.jsx'
 import parse from 'html-react-parser'
 import React from 'react'
+import styles from './index.module.css'
 
 const NewsOverview = () => {
 	const routeNavigator = useRouteNavigator()
@@ -37,15 +38,13 @@ const NewsOverview = () => {
 			{isSuccess && (
 				<>
 					<PanelHeaderBack onClick={() => routeNavigator.back()} />
-					<Header size='large' width='10px' wrap='wrap'>
-						<Title style={{ textWrap: 'wrap', maxWidth: '90vw' }}>
-							{currentNews.title}{' '}
-						</Title>
+					<Header size='large'>
+						<Title className={styles.wrapText}>{currentNews.title} </Title>
 					</Header>
 					<RichCell>
 						<div>
 							{currentNews.text && (
-								<Text style={{ textWrap: 'wrap', maxWidth: '90vw' }}>
+								<Text className={styles.wrapText}>
 									{parse(currentNews.text)}
 								</Text>
 							)}
@@ -53,7 +52,7 @@ const NewsOverview = () => {
 								<Link
 									href={currentNews.url}
 									target='_blank'
-									style={{ textWrap: 'wrap', maxWidth: '90vw' }}
+									className={styles.wrapText}
 								>
 									{currentNews.url}{' '}
 									<Icon24ExternalLinkOutline width={16} height={16} />
@@ -65,16 +64,7 @@ const NewsOverview = () => {
 						</Caption>
 						<Spacing size={24} />
 						<Group>
-							<div
-								style={{
-									display: 'flex',
-									flexDirection: 'row',
-									justifyContent: 'space-between',
-									paddingBottom: '1em',
-									paddingTop: '1em',
-									paddingRight: '0.5em'
-								}}
-							>
+							<div className={styles.comments}>
 								<Cell
 									indicator={
 										<Counter mode='primary'>{currentNews.descendants}</Counter>
@@ -90,14 +80,7 @@ const NewsOverview = () => {
 							<Separator />
 							<Spacing size={24}></Spacing>
 							{!currentNews.kids && (
-								<Caption
-									level='1'
-									style={{
-										marginLeft: '1em',
-										paddingBottom: '2em',
-										paddingTop: '1em'
-									}}
-								>
+								<Caption level='1' className={styles.emptyState}>
 									No comments yet
 								</Caption>
 							)}

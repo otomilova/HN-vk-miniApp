@@ -1,0 +1,18 @@
+.news {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    padding-right: 0.5em;
+}
+
+.story {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.spinner {
+    margin: 20px 0;
+}

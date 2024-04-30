@@ -1,0 +1,19 @@
+.wrapText {
+    text-wrap: wrap;
+    max-width: 90vw;
+}
+
+.comments {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    padding-right: 0.5em;
+}
+
+.emptyState {
+    margin-left: 1em;
+    padding-bottom: 2em;
+    padding-top: 1em;
+}
