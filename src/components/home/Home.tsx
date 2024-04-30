@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import NewsList from '../newsList/NewsList'
-import NewsOverview from '../newsOverview/NewsOverview'
+import StoryList from '../../features/story-list/components/StoryList'
+import StoryOverview from '../../features/story-overview/components/StoryOverview'
 import { Footer, Image, Panel, PanelHeader, View } from '@vkontakte/vkui'
 import { useActiveVkuiLocation } from '@vkontakte/vk-mini-apps-router'
 
@@ -16,7 +16,7 @@ const Home: FC = () => {
 						>
 							Hacker News
 						</PanelHeader>
-						<NewsList />
+						<StoryList />
 					</Panel>
 					<Panel id='newsOverview'>
 						<PanelHeader
@@ -24,7 +24,7 @@ const Home: FC = () => {
 						>
 							Hacker News
 						</PanelHeader>
-						<NewsOverview />
+						<StoryOverview />
 					</Panel>
 				</View>
 				<Footer>Hacker News</Footer>

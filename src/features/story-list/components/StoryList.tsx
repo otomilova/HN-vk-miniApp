@@ -1,13 +1,13 @@
 import { Button, CardGrid, Group, Header } from '@vkontakte/vkui'
-import { useNews } from '../../hooks/useNews'
+import { useNews } from '../../../services/hooks/useNews'
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router'
-import Loader from '../../ui/loader/Loader.tsx'
-import styles from './index.module.css'
+import Loader from '../../../shared/ui/loader/Loader.tsx'
+import styles from '../ui/index.module.css'
 import { Story } from './Story'
 import { FC } from 'react'
 import { UseQueryResult } from '@tanstack/react-query'
 
-const NewsList: FC = () => {
+const StoryList: FC = () => {
 	const {
 		data: news,
 		refetch,
@@ -48,4 +48,4 @@ const NewsList: FC = () => {
 	)
 }
 
-export default NewsList
+export default StoryList

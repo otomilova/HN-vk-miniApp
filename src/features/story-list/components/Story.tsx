@@ -1,9 +1,9 @@
-import { useNewsById } from '../../hooks/useNewsById'
+import { useNewsById } from '../../../services/hooks/useNewsById'
 import { ContentCard, SimpleCell, Spinner } from '@vkontakte/vkui'
-import styles from './index.module.css'
+import styles from '../ui/index.module.css'
 import { RouteNavigator } from '@vkontakte/vk-mini-apps-router'
 import { FC } from 'react'
-import { IStory } from '../../types/types'
+import { IStory } from '../../../shared/types/types'
 
 interface IStoryProps {
 	id: number

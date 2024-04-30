@@ -1,6 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
-import { getNews } from '../services/news.service.ts'
-import { NEWS_QUERY_LIMIT, REFETCH_INTERVAL } from '../services/apiConstants.ts'
+import { getNews } from '../api/news.service.ts'
+import {
+	NEWS_QUERY_LIMIT,
+	REFETCH_INTERVAL
+} from '../../shared/constants/apiConstants.ts'
 
 export const useNews = () => {
 	return useQuery({

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { HN_URL } from './apiConstants.ts'
+import { HN_URL } from '../../shared/constants/apiConstants.ts'
 
 export const getNews = async (limit: number) => {
 	try {

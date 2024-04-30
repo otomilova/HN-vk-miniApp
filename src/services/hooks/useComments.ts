@@ -1,5 +1,5 @@
 import { useQueries } from '@tanstack/react-query'
-import { getItemById } from '../services/items.service.ts'
+import { getItemById } from '../api/items.service.ts'
 import { format } from 'date-fns'
 
 export const useComments = (ids: number[] | undefined) => {

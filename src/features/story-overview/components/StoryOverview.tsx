@@ -14,17 +14,17 @@ import {
 	Title
 } from '@vkontakte/vkui'
 import { useParams, useRouteNavigator } from '@vkontakte/vk-mini-apps-router'
-import { useNewsById } from '../../hooks/useNewsById'
-import Loader from '../../ui/loader/Loader.tsx'
+import { useNewsById } from '../../../services/hooks/useNewsById'
+import Loader from '../../../shared/ui/loader/Loader.tsx'
 import { Icon24ExternalLinkOutline } from '@vkontakte/icons'
-import Comments from '../comments/Comments'
+import Comments from '../../comments/components/Comments'
 import parse from 'html-react-parser'
 import React, { FC } from 'react'
-import styles from './index.module.css'
-import { IStory } from '../../types/types'
+import styles from '../ui/index.module.css'
+import { IStory } from '../../../shared/types/types'
 import { UseQueryResult } from '@tanstack/react-query/build/modern/index'
 
-const NewsOverview: FC = () => {
+const StoryOverview: FC = () => {
 	const routeNavigator = useRouteNavigator()
 	const { id } = useParams<'id'>()
 	const {
@@ -72,7 +72,7 @@ const NewsOverview: FC = () => {
 								</Link>
 							)}
 						</div>
-						<Caption level='2' className={styles.published}>
+						<Caption level='1' className={styles.published}>
 							{`Published ${currentNews.time} ago by ${currentNews.by}`}
 						</Caption>
 						<Spacing size={24} />
@@ -107,4 +107,4 @@ const NewsOverview: FC = () => {
 	)
 }
 
-export default NewsOverview
+export default StoryOverview

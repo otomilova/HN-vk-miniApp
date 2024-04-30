@@ -1,10 +1,10 @@
-import { useComments } from '../../hooks/useComments'
+import { useComments } from '../../../services/hooks/useComments'
 import React, { FC, useState } from 'react'
-import Loader from '../../ui/loader/Loader.tsx'
+import Loader from '../../../shared/ui/loader/Loader.tsx'
 import { Button, RichCell, Separator, Spacing, Text } from '@vkontakte/vkui'
 import parse from 'html-react-parser'
-import styles from './index.module.css'
-import { IComment } from '../../types/types'
+import styles from '../ui/index.module.css'
+import { IComment } from '../../../shared/types/types'
 
 interface ICommentsProps {
 	ids: number[] | undefined

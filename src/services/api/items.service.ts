@@ -1,6 +1,6 @@
-import { HN_URL } from './apiConstants'
+import { HN_URL } from '../../shared/constants/apiConstants'
 import axios from 'axios'
-import { TItem } from '../types/types.d.ts'
+import { TItem } from '../../shared/types/types.d.ts'
 
 export const getItemById = async id => {
 	try {
