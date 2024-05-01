@@ -44,13 +44,13 @@ const StoryOverview: FC = () => {
 		<Group>
 			{isLoading && (
 				<>
-					<PanelHeaderBack onClick={() => routeNavigator.back()} />
+					<PanelHeaderBack onClick={() => routeNavigator.push('/')} />
 					<Loader />
 				</>
 			)}
 			{isSuccess && (
 				<>
-					<PanelHeaderBack onClick={() => routeNavigator.back()} />
+					<PanelHeaderBack onClick={() => routeNavigator.push('/')} />
 					<Header size='large' className={styles.wrapText}>
 						<Title className={styles.wrapText}>{currentNews.title} </Title>
 					</Header>

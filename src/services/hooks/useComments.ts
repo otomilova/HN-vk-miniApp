@@ -1,6 +1,7 @@
 import { useQueries } from '@tanstack/react-query'
 import { getItemById } from '../api/items.service.ts'
 import { format } from 'date-fns'
+import { makeDate } from '../../utils/dateUtils'
 
 export const useComments = (ids: number[] | undefined) => {
 	return useQueries({
@@ -17,9 +18,7 @@ export const useComments = (ids: number[] | undefined) => {
 		combine: results => {
 			return {
 				data: results.map(result => {
-					const itemDate = result?.data
-						? new Date(result?.data?.data?.time * 1000)
-						: new Date()
+					const itemDate = makeDate(result?.data?.data?.time)
 
 					return {
 						...result.data,
