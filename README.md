@@ -36,16 +36,10 @@
 git clone https://github.com/otomilova/hn-vk-mini-app.git
 ```
 
-
 Установить зависимости и запустить приложение в режиме разработки
 
 ```sh
 yarn install
 yarn dev
 ```
-
-Развернуть приложение как сервис VK Mini App
-
-```sh
-yarn deploy
-```
+По умолчанию приложение запустится на localhost:3000
