@@ -51,7 +51,7 @@ const StoryOverview: FC = () => {
 			{isSuccess && (
 				<>
 					<PanelHeaderBack onClick={() => routeNavigator.back()} />
-					<Header size='large'>
+					<Header size='large' className={styles.wrapText}>
 						<Title className={styles.wrapText}>{currentNews.title} </Title>
 					</Header>
 					<RichCell>

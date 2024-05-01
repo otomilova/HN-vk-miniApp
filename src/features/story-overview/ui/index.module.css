@@ -1,6 +1,9 @@
 .wrapText {
     text-wrap: wrap;
     max-width: 90vw;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .comments {
